@@ -1,13 +1,17 @@
-import { forwardRef, Ref, ReactNode } from 'react';
+import React, { forwardRef, Ref } from 'react';
 import MDTypographyRoot from './MDTypographyRoot';
 import { useMaterialUIController } from '../../context';
-import { MDTypographyProps } from '../../types/MDTypes';
+import { TypographyOwnerState } from './types';
+
+interface MDTypographyProps extends TypographyOwnerState {
+  children: React.ReactNode;
+}
 
 const MDTypography = forwardRef<HTMLDivElement, MDTypographyProps>(
   (
     {
       color = 'dark',
-      fontWeight = false,
+      fontWeight = '',
       textTransform = 'none',
       verticalAlign = 'unset',
       textGradient = false,
@@ -25,13 +29,9 @@ const MDTypography = forwardRef<HTMLDivElement, MDTypographyProps>(
         {...rest}
         ref={ref as Ref<HTMLDivElement>}
         ownerState={{
-          color: color as string,
-          textTransform: textTransform as
-            | 'none'
-            | 'uppercase'
-            | 'lowercase'
-            | 'capitalize',
-          verticalAlign: verticalAlign as ,
+          color,
+          textTransform,
+          verticalAlign,
           fontWeight,
           opacity,
           textGradient,

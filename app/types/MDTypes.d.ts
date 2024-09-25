@@ -216,12 +216,36 @@ declare module '@mui/material/styles' {
   }
 }
 
+export type COLORS =
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'light'
+  | 'dark'
+  | 'none'
+  | 'text'
+  | 'white'
+  | 'inherit';
+
 declare module '@mui/material/styles/createTypography' {
   export type TypographyOptions = ExtendedTypographyOptions;
 }
 
 interface OwnerState {
-  color?: keyof CustomThemeColors['gradients'] | string;
+  color?:
+    | keyof CustomThemeColors['gradients']
+    | keyof CustomThemeColors
+    | keyof CustomThemeColors['text']
+    | keyof CustomThemeColors['white']
+    | keyof CustomThemeColors['black']
+    | keyof CustomThemeColors['grey']
+    | keyof CustomThemeColors['dark']
+    | 'inherit'
+    | string
+    | COLORS;
   circular?: boolean;
   border?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -235,68 +259,6 @@ interface OwnerState {
   active?: boolean;
   value?: number | string;
   textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none';
-  verticalAlign?: 'top' | 'middle' | 'bottom';
-  fontWeight?: 'light' | 'regular' | 'medium' | 'bold';
-  opacity?: number;
-  textGradient?: boolean;
-}
-
-export interface MDBoxProps extends BoxProps {
-  variant?: 'contained' | 'gradient';
-  bgColor?: string;
-  color?: string;
-  opacity?: number;
-  borderRadius?: string;
-  shadow?: string;
-  coloredShadow?:
-    | 'primary'
-    | 'secondary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'light'
-    | 'dark'
-    | 'none';
-  ownerState?: {
-    variant?: 'contained' | 'gradient';
-    bgColor?: string;
-    color?: string;
-    opacity?: number;
-    borderRadius?: string;
-    shadow?: string;
-    coloredShadow?:
-      | 'primary'
-      | 'secondary'
-      | 'info'
-      | 'success'
-      | 'warning'
-      | 'error'
-      | 'light'
-      | 'dark'
-      | 'none';
-  };
-  children?: ReactNode;
-}
-
-export enum COLORS {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Info = 'info',
-  Success = 'success',
-  Warning = 'warning',
-  Error = 'error',
-  Light = 'light',
-  Dark = 'dark',
-  Inherit = 'inherit',
-  Text = 'text',
-  White = 'white'
-}
-
-export interface MDTypographyProps {
-  color?: COLORS;
-  fontWeight?: false | 'light' | 'regular' | 'medium' | 'bold';
-  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
   verticalAlign?:
     | 'unset'
     | 'baseline'
@@ -307,9 +269,29 @@ export interface MDTypographyProps {
     | 'middle'
     | 'top'
     | 'bottom';
-  textGradient?: boolean;
+  fontWeight?: 'light' | 'regular' | 'medium' | 'bold' | string;
   opacity?: number;
-  children: ReactNode;
+  textGradient?: boolean;
+}
 
-  [key: string]: unknown;
+export type Sizes = 'small' | 'medium' | 'large';
+
+export interface MDBoxProps extends BoxProps {
+  variant?: 'contained' | 'gradient';
+  bgColor?: string;
+  color?: string;
+  opacity?: number;
+  borderRadius?: string;
+  shadow?: string;
+  coloredShadow?: COLORS;
+  ownerState?: {
+    variant?: 'contained' | 'gradient';
+    bgColor?: string;
+    color?: string;
+    opacity?: number;
+    borderRadius?: string;
+    shadow?: string;
+    coloredShadow?: COLORS;
+  };
+  children?: ReactNode;
 }

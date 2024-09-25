@@ -1,11 +1,11 @@
 import Typography from '@mui/material/Typography';
 import { styled, Theme } from '@mui/material/styles';
 import { CSSObject } from '@mui/system';
-import { OwnerState } from '../../types/MDTypes';
+import { TypographyOwnerState } from './types';
 
 export default styled(Typography, {
   shouldForwardProp: (prop) => prop !== 'ownerState'
-})<{ ownerState: OwnerState }>(({ theme, ownerState }): CSSObject => {
+})<{ ownerState: TypographyOwnerState }>(({ theme, ownerState }): CSSObject => {
   const { palette, typography, functions } = theme as Theme;
   const {
     color,
@@ -34,7 +34,6 @@ export default styled(Typography, {
     bold: fontWeightBold
   };
 
-  // Gradient styles for text
   const gradientStyles = (): CSSObject => ({
     backgroundImage:
       color !== 'inherit' &&
@@ -50,7 +49,6 @@ export default styled(Typography, {
     zIndex: 1
   });
 
-  // Determine color value
   let colorValue =
     color === 'inherit' || !palette[color] ? 'inherit' : palette[color].main;
 

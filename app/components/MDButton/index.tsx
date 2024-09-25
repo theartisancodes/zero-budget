@@ -1,26 +1,7 @@
-import { forwardRef, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import MDButtonRoot from './MDButtonRoot';
 import { useMaterialUIController } from '../../context';
-
-interface MDButtonProps {
-  size?: 'small' | 'medium' | 'large';
-  variant?: 'text' | 'contained' | 'outlined' | 'gradient';
-  color?:
-    | 'white'
-    | 'primary'
-    | 'secondary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'light'
-    | 'dark';
-  circular?: boolean;
-  iconOnly?: boolean;
-  children: ReactNode;
-
-  [key: string]: any;
-}
+import { MDButtonProps } from './types';
 
 const MDButton = forwardRef<HTMLButtonElement, MDButtonProps>(
   (

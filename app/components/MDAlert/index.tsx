@@ -10,7 +10,7 @@ interface MDAlertProps {
   dismissible?: boolean;
   children: ReactNode;
 
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 function MDAlert({
