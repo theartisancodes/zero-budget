@@ -1,0 +1,33 @@
+$spacing_property: (
+  'p': 'padding',
+  'm': 'margin'
+);
+
+$spacing_direction: (
+  't': top,
+  'r': right,
+  'b': bottom,
+  'l': left
+);
+
+@each $property_name, $property in $spacing_property {
+  @for $i from 0 through 20 {
+    $spacing_value: $i * 4px;
+    .#{$property_name}a-#{$i} {
+      #{$property}: $spacing_value;
+    }
+    .#{$property_name}x-#{$i} {
+      #{$property}-left: $spacing_value;
+      #{$property}-right: $spacing_value;
+    }
+    .#{$property_name}y-#{$i} {
+      #{$property}-top: $spacing_value;
+      #{$property}-bottom: $spacing_value;
+    }
+    @each $direction_name, $direction in $spacing_direction {
+      .#{$property_name}#{$direction_name}-#{$i} {
+        #{$property}-#{$direction}: $spacing_value;
+      }
+    }
+  }
+}

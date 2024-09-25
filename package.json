@@ -9,16 +9,47 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.13.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@mui/icons-material": "^6.1.1",
+    "@mui/material": "^6.1.1",
+    "@mui/material-nextjs": "^6.1.1",
+    "@mui/styles": "^6.1.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "@types/testing-library__jest-dom": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "~5.10.0",
+    "@typescript-eslint/parser": "~5.10.0",
+    "chroma-js": "^3.1.1",
+    "eslint": "~8.7.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-next": "13.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "7.27.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
+    "postcss": "^8.3.10",
+    "prettier": "^2.7.1",
+    "typescript": "^5",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

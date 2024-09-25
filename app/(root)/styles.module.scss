@@ -1,0 +1,23 @@
+@import '../styles/colors.scss';
+@import '../styles/typography.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+
+  .dashboard {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+
+    button {
+      width: 200px;
+      display: flex;
+      gap: 16px;
+      justify-content: flex-start;
+      @include typography('body', 'xs', 'regular');
+    }
+  }
+}

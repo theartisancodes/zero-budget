@@ -1,26 +1,64 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "forceConsistentCasingInFileNames": true,
     "incremental": true,
+    "isolatedModules": true,
+    "module": "esnext",
+    "noEmit": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "strict": false,
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
+    "baseUrl": "src",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "jsx": "preserve",
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es2021",
+    "paths": {
+      "*": [
+        "*"
+      ],
+    },
     "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "kubernetes",
+    "tmp",
+    "libs"
+  ],
+  "include": [
+    "typings.d.ts",
+    "src",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ]
 }

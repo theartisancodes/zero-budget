@@ -1,0 +1,99 @@
+@use 'sass:map';
+@import './mixins';
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700
+);
+
+$font-families: (
+  'heading': 'Inria Serif',
+  'body': 'Inter'
+);
+
+@mixin typography($type, $style, $weight) {
+  @extend %#{$style};
+  font-family: map.get($font-families, $type), serif;
+  font-weight: map.get($font-weights, $weight);
+}
+
+// Heading placeholders
+
+%largeTitle {
+  font-size: 52px;
+  line-height: 60px;
+  @include breakpoint('md') {
+    font-size: 64px;
+    line-height: 72px;
+  }
+}
+
+%h1 {
+  font-size: 44px;
+  line-height: 52px;
+  @include breakpoint('md') {
+    font-size: 52px;
+    line-height: 60px;
+  }
+}
+
+%h2 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+%h3 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+%h4 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+%h5 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+%h6 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+// Body placeholders
+
+%xl {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+%lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+%base {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+%sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// Created due to a misterious bug that sm is not applied.
+%small {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+%xs {
+  font-size: 12px;
+  line-height: 16px;
+}

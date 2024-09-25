@@ -1,0 +1,119 @@
+$primary_lighter_emerald: #d9eed8;
+$primary_light_emerald: #7fc87c;
+$primary_emerald: #338632;
+$primary_dark_emerald: #245a23;
+$primary_darker_emerald: #163a16;
+$default_emerald: #56c870;
+
+$primary_light_material: #49a3f1;
+$primary_material: #1a73e8;
+
+$secondary_dark_kale: #205257;
+$secondary_darker_kale: #10292c;
+$secondary_kale: #307c84;
+$secondary_light_kale: #7cbfc7;
+$secondary_lighter_kale: #e0f3f5;
+$secondary_medium_kale: #28656b;
+
+$tertiary_lighter_opal: #ebfdfa;
+$tertiary_lightest_opal: #eff8f6;
+$tertiary_light_opal: #b0d6ce;
+$tertiary_opal: #448071;
+$tertiary_dark_opal: #29554c;
+$tertiary_darker_opal: #162f2b;
+
+$neutral_white: #ffffff;
+$neutral_lightest_green_black: #F0F2F5;
+$neutral_lighter_green_black: #e7e9ea;
+$neutral_light_green_black: #a1a6a9;
+$green_black: #717a7e;
+$neutral_dark_green_black: #424d53;
+$neutral_darker_green_black: #132128;
+$black: #000000;
+$white_snow: #f2f2f2;
+
+$secondary_background: #f5f5f5;
+
+$accent_orange_light: #ffe1ce;
+$accent_orange: #fd853a;
+$accent_orange_dark: #83421a;
+$accent_blue_light: #bec1f3;
+$accent_blue: #3b45f1;
+$accent_blue_dark: #21278c;
+$accent_purple_light: #dccbff;
+$accent_purple: #a3248e;
+$accent_purple_dark: #452e73;
+
+$support_info_light: #eef9fe;
+$support_info_dark: #005f87;
+$support_warning_light: #fffaeb;
+$support_warning_dark: #8b6800;
+$support_error_light: #fff0f0;
+$support_error_dark: #990000;
+$support_success_light: #e9ffe9;
+$support_success_dark: #007c34;
+
+$danger_lighter_danger: #f6eaeb;
+$danger_light_danger: #e2a9ac;
+$danger_danger: #cb3b43;
+$danger_dark_danger: #9e2d33;
+$danger_darker_danger: #5e191d;
+:export {
+  primary_lighter_emerald: $primary_lighter_emerald;
+  primary_light_emerald: $primary_light_emerald;
+  primary_emerald: $primary_emerald;
+  primary_dark_emerald: $primary_dark_emerald;
+  primary_darker_emerald: $primary_darker_emerald;
+
+  primary_light_material: $primary_light_material;
+  primary_material: $primary_material;
+
+  secondary_dark_kale: $secondary_dark_kale;
+  secondary_darker_kale: $secondary_darker_kale;
+  secondary_kale: $secondary_kale;
+  secondary_light_kale: $secondary_light_kale;
+  secondary_lighter_kale: $secondary_lighter_kale;
+  secondary_medium_kale: $secondary_medium_kale;
+
+  tertiary_lighter_opal: $tertiary_lighter_opal;
+  tertiary_light_opal: $tertiary_light_opal;
+  tertiary_opal: $tertiary_opal;
+  tertiary_dark_opal: $tertiary_dark_opal;
+  tertiary_darker_opal: $tertiary_darker_opal;
+
+  neutral_white: $neutral_white;
+  neutral_lighter_green_black: $neutral_lighter_green_black;
+  neutral_light_green_black: $neutral_light_green_black;
+  green_black: $green_black;
+  neutral_dark_green_black: $neutral_dark_green_black;
+  neutral_darker_green_black: $neutral_darker_green_black;
+  black: $black;
+  white_snow: $white_snow;
+
+  secondary_background: $secondary_background;
+
+  accent_orange_light: $accent_orange_light;
+  accent_orange: $accent_orange;
+  accent_orange_dark: $accent_orange_dark;
+  accent_blue_light: $accent_blue_light;
+  accent_blue: $accent_blue;
+  accent_blue_dark: $accent_blue_dark;
+  accent_purple_light: $accent_purple_light;
+  accent_purple: $accent_purple;
+  accent_purple_dark: $accent_purple_dark;
+
+  support_info_light: $support_info_light;
+  support_info_dark: $support_info_dark;
+  support_warning_light: $support_warning_light;
+  support_warning_dark: $support_warning_dark;
+  support_error_light: $support_error_light;
+  support_error_dark: $support_error_dark;
+  support_success_light: $support_success_light;
+  support_success_dark: $support_success_dark;
+
+  danger_lighter_danger: $danger_lighter_danger;
+  danger_light_danger: $danger_light_danger;
+  danger_danger: $danger_danger;
+  danger_dark_danger: $danger_dark_danger;
+  danger_darker_danger: $danger_darker_danger;
+}
