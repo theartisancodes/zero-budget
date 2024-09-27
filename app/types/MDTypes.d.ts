@@ -211,9 +211,7 @@ declare module '@mui/material/styles' {
   }
 
   interface ThemeOptions {
-    palette: {
-      customColors: CustomThemeColors;
-    };
+    palette: CustomThemeColors;
     boxShadows: CustomBoxShadows;
     borders: CustomBorders;
     functions: CustomFunctions;
@@ -252,7 +250,7 @@ interface OwnerState {
     | string
     | COLORS;
   circular?: boolean;
-  border?: boolean;
+  border?: CustomBorders;
   size?: 'xs' | 'sm' | 'md' | 'lg';
   indicator?: boolean;
   variant?: 'gradient' | 'contained' | 'outlined' | 'text';

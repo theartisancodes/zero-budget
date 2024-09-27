@@ -6,12 +6,13 @@ import React, {
   ReactNode,
   Dispatch
 } from 'react';
+import { COLORS } from '../types/MDTypes';
 
 interface State {
   miniSidenav: boolean;
   transparentSidenav: boolean;
   whiteSidenav: boolean;
-  sidenavColor: string;
+  sidenavColor: COLORS;
   transparentNavbar: boolean;
   fixedNavbar: boolean;
   openConfigurator: boolean;
@@ -24,7 +25,7 @@ type Action =
   | { type: 'MINI_SIDENAV'; value: boolean }
   | { type: 'TRANSPARENT_SIDENAV'; value: boolean }
   | { type: 'WHITE_SIDENAV'; value: boolean }
-  | { type: 'SIDENAV_COLOR'; value: string }
+  | { type: 'SIDENAV_COLOR'; value: COLORS }
   | { type: 'TRANSPARENT_NAVBAR'; value: boolean }
   | { type: 'FIXED_NAVBAR'; value: boolean }
   | { type: 'OPEN_CONFIGURATOR'; value: boolean }
@@ -119,7 +120,7 @@ const setTransparentSidenav = (dispatch: Dispatch<Action>, value: boolean) =>
 const setWhiteSidenav = (dispatch: Dispatch<Action>, value: boolean) =>
   dispatch({ type: 'WHITE_SIDENAV', value });
 
-const setSidenavColor = (dispatch: Dispatch<Action>, value: string) =>
+const setSidenavColor = (dispatch: Dispatch<Action>, value: COLORS) =>
   dispatch({ type: 'SIDENAV_COLOR', value });
 
 const setTransparentNavbar = (dispatch: Dispatch<Action>, value: boolean) =>

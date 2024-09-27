@@ -21,6 +21,7 @@ import {
   setTransparentSidenav,
   setWhiteSidenav
 } from '../../context';
+import { COLORS } from '../../types/MDTypes';
 
 interface Route {
   type: 'collapse' | 'title' | 'divider';
@@ -34,14 +35,7 @@ interface Route {
 }
 
 interface SidenavProps {
-  color?:
-    | 'primary'
-    | 'secondary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'dark';
+  color?: COLORS;
   brand?: string;
   brandName: string;
   routes: Route[];

@@ -10,7 +10,6 @@ import { ServerStyleSheets } from '@mui/styles';
 import { MaterialUIControllerProvider } from './context';
 
 export default function RootLayout({ children }) {
-  // Handle MUI SSR style injection
   useServerInsertedHTML(() => {
     const sheets = new ServerStyleSheets();
     sheets.collect(children);
