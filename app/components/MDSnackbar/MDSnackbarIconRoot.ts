@@ -11,8 +11,7 @@ export default styled(Icon)<{ ownerState: IconProps }>(
   ({ theme, ownerState }) => {
     const { palette, functions, typography } = theme as Theme;
     const { color, bgWhite } = ownerState;
-    const { customColors } = palette;
-    const { white, transparent, gradients } = customColors;
+    const { white, transparent, gradients } = palette;
     const { pxToRem, linearGradient } = functions;
     const { size } = typography;
 

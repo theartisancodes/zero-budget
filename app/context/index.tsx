@@ -3,7 +3,8 @@ import React, {
   useContext,
   useReducer,
   useMemo,
-  ReactNode
+  ReactNode,
+  Dispatch
 } from 'react';
 
 interface State {
@@ -31,7 +32,7 @@ type Action =
   | { type: 'LAYOUT'; value: string }
   | { type: 'DARKMODE'; value: boolean };
 
-type MaterialUIContextType = [State, React.Dispatch<Action>];
+type MaterialUIContextType = [State, Dispatch<Action>];
 
 const MaterialUIContext = createContext<MaterialUIContextType | undefined>(
   undefined
@@ -69,9 +70,9 @@ interface MaterialUIControllerProviderProps {
   children: ReactNode;
 }
 
-function MaterialUIControllerProvider({
-  children
-}: MaterialUIControllerProviderProps) {
+const MaterialUIControllerProvider: React.FC<
+  MaterialUIControllerProviderProps
+> = ({ children }) => {
   const initialState: State = {
     miniSidenav: false,
     transparentSidenav: false,
@@ -97,7 +98,7 @@ function MaterialUIControllerProvider({
       {children}
     </MaterialUIContext.Provider>
   );
-}
+};
 
 function useMaterialUIController() {
   const context = useContext(MaterialUIContext);
@@ -109,4 +110,47 @@ function useMaterialUIController() {
   return context;
 }
 
-export { MaterialUIControllerProvider, useMaterialUIController };
+const setMiniSidenav = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'MINI_SIDENAV', value });
+
+const setTransparentSidenav = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'TRANSPARENT_SIDENAV', value });
+
+const setWhiteSidenav = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'WHITE_SIDENAV', value });
+
+const setSidenavColor = (dispatch: Dispatch<Action>, value: string) =>
+  dispatch({ type: 'SIDENAV_COLOR', value });
+
+const setTransparentNavbar = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'TRANSPARENT_NAVBAR', value });
+
+const setFixedNavbar = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'FIXED_NAVBAR', value });
+
+const setOpenConfigurator = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'OPEN_CONFIGURATOR', value });
+
+const setDirection = (dispatch: Dispatch<Action>, value: 'ltr' | 'rtl') =>
+  dispatch({ type: 'DIRECTION', value });
+
+const setLayout = (dispatch: Dispatch<Action>, value: string) =>
+  dispatch({ type: 'LAYOUT', value });
+
+const setDarkMode = (dispatch: Dispatch<Action>, value: boolean) =>
+  dispatch({ type: 'DARKMODE', value });
+
+export {
+  MaterialUIControllerProvider,
+  useMaterialUIController,
+  setMiniSidenav,
+  setTransparentSidenav,
+  setWhiteSidenav,
+  setSidenavColor,
+  setTransparentNavbar,
+  setFixedNavbar,
+  setOpenConfigurator,
+  setDirection,
+  setLayout,
+  setDarkMode
+};

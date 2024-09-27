@@ -6,9 +6,8 @@ export default styled(Button)<{ ownerState: MDButtonProps }>(
   ({ theme, ownerState }) => {
     const { palette, functions, borders, boxShadows } = theme as Theme;
     const { color, variant, size, circular, iconOnly, darkMode } = ownerState;
-    const { customColors } = palette;
 
-    const { white, text, transparent, gradients, grey } = customColors;
+    const { white, text, transparent, gradients, grey } = palette;
     const { boxShadow, linearGradient, pxToRem, rgba } = functions;
     const { borderRadius } = borders;
     const { colored } = boxShadows;

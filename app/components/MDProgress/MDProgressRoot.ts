@@ -6,9 +6,8 @@ export default styled(LinearProgress)<{ ownerState: OwnerState }>(
   ({ theme, ownerState }) => {
     const { palette, functions } = theme as Theme;
     const { color, value, variant } = ownerState;
-    const { customColors } = palette;
 
-    const { text, gradients, info } = customColors;
+    const { text, gradients, info } = palette;
     const { linearGradient } = functions;
     let backgroundValue: string;
 

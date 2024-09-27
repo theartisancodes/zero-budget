@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import MDAvatarRoot from './MDAvatarRoot';
 import { CustomThemeColors, CustomBoxShadows } from '../../types/MDTypes';
 

@@ -14,7 +14,7 @@ export default styled(Box)<MDBoxProps>(({ theme, ownerState }) => {
     coloredShadow
   } = ownerState;
 
-  const { gradients, grey, white } = palette.customColors;
+  const { gradients, grey, white } = palette;
   const { linearGradient } = functions;
   const { borderRadius: radius } = borders;
   const { colored } = boxShadows;

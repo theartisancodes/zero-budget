@@ -1,17 +1,13 @@
 import Box from '@mui/material/Box';
 import { styled, Theme } from '@mui/material/styles';
-import { OwnerState, CustomThemeColors } from '../../types/MDTypes';
+import { OwnerState } from '../../types/MDTypes';
 
 export default styled(Box)<{ ownerState: OwnerState }>(
   ({ theme, ownerState }) => {
-    const { palette, typography, borders, functions } = theme as Theme & {
-      palette: {
-        customColors: CustomThemeColors;
-      };
-    };
+    const { palette, typography, borders, functions } = theme as Theme;
     const { color } = ownerState;
 
-    const { white, gradients } = palette.customColors;
+    const { white, gradients } = palette;
     const { fontWeightMedium, fontSizeRegular } = typography;
     const { borderRadius } = borders;
     const { pxToRem, linearGradient } = functions;

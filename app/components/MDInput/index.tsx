@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import MDInputRoot from './MDInputRoot';
 import { TextFieldProps } from '@mui/material/TextField';
 
@@ -22,7 +22,7 @@ const MDInput = forwardRef<HTMLInputElement, MDInputProps>(
     <MDInputRoot
       {...rest}
       ref={ref}
-      size={size} // Ensure size is set correctly
+      size={size}
       ownerState={{ error, success, disabled }}
     />
   )

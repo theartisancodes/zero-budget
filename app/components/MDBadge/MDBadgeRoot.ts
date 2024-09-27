@@ -1,15 +1,10 @@
-import React from 'react';
 import Badge from '@mui/material/Badge';
 import { styled, Theme } from '@mui/material/styles';
 import { CustomThemeColors, OwnerState } from '../../types/MDTypes';
 
 export default styled(Badge)<{ ownerState: OwnerState }>(
   ({ theme, ownerState }) => {
-    const { palette, typography, borders, functions } = theme as Theme & {
-      palette: {
-        customColors: CustomThemeColors;
-      };
-    };
+    const { palette, typography, borders, functions } = theme as Theme;
     const {
       color,
       circular,
@@ -21,7 +16,7 @@ export default styled(Badge)<{ ownerState: OwnerState }>(
       children
     } = ownerState;
 
-    const { white, dark, gradients, badgeColors } = palette.customColors;
+    const { white, dark, gradients, badgeColors } = palette;
     const { size: fontSize, fontWeightBold } = typography;
     const { borderRadius, borderWidth } = borders;
     const { pxToRem, linearGradient } = functions;

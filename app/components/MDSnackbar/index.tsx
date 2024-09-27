@@ -90,8 +90,8 @@ const MDSnackbar: FC<MDSnackbarProps> = ({
         sx={{
           backgroundColor: ({ palette }) =>
             darkMode
-              ? palette.customColors.background.default
-              : palette[color] || palette.customColors.white.main
+              ? palette.background.default
+              : palette[color] || palette.white.main
         }}
       >
         <MDBox
@@ -123,10 +123,10 @@ const MDSnackbar: FC<MDSnackbarProps> = ({
             </MDTypography>
             <Icon
               sx={{
-                color: ({ palette: { customColors } }) =>
+                color: ({ palette }) =>
                   (bgWhite && !darkMode) || color === 'light'
-                    ? customColors.dark.main
-                    : customColors.white.main,
+                    ? palette.dark.main
+                    : palette.white.main,
                 fontWeight: ({ typography: { fontWeightBold } }) =>
                   fontWeightBold,
                 cursor: 'pointer',
@@ -151,15 +151,14 @@ const MDSnackbar: FC<MDSnackbarProps> = ({
           p={1.5}
           sx={{
             fontSize: ({ typography: { size } }) => size.sm,
-            color: ({ palette: { customColors } }) => {
+            color: ({ palette }) => {
               let colorValue =
                 bgWhite || color === 'light'
-                  ? customColors.text.main
-                  : customColors.white.main;
+                  ? palette.text.main
+                  : palette.white.main;
 
               if (darkMode) {
-                colorValue =
-                  color === 'light' ? 'inherit' : customColors.white.main;
+                colorValue = color === 'light' ? 'inherit' : palette.white.main;
               }
 
               return colorValue;

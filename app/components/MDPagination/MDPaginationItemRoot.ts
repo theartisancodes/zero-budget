@@ -2,7 +2,7 @@ import { styled, Theme } from '@mui/material/styles';
 import MDButton from '../MDButton';
 import { OwnerState } from '../../types/MDTypes';
 
-export default styled(MDButton)<{ ownerState: OwnerState }>(
+export default styled(MDButton)<{ ownerState: Omit<OwnerState, 'size'> }>(
   ({ theme, ownerState }) => {
     const { borders, functions, typography, palette } = theme as Theme;
     const { variant, paginationSize, active } = ownerState;
@@ -10,7 +10,7 @@ export default styled(MDButton)<{ ownerState: OwnerState }>(
     const { borderColor } = borders;
     const { pxToRem } = functions;
     const { fontWeightRegular, size: fontSize } = typography;
-    const { light } = palette.customColors;
+    const { light } = palette;
 
     let sizeValue = pxToRem(36);
 

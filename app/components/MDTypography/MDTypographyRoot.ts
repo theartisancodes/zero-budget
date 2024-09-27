@@ -17,8 +17,7 @@ export default styled(Typography, {
     darkMode
   } = ownerState;
 
-  const { customColors } = palette;
-  const { gradients, transparent, white } = customColors;
+  const { gradients, transparent, white } = palette;
   const {
     fontWeightLight,
     fontWeightRegular,

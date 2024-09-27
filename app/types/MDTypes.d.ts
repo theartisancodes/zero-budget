@@ -5,6 +5,7 @@ import { BoxProps } from '@mui/material/Box';
 export interface CustomThemeColors {
   background: {
     default: string;
+    sidenav: string;
   };
   text: {
     main: string;
@@ -175,15 +176,21 @@ export interface CustomBorders {
 }
 
 type BoxShadow = {
-  offset?: string[];
-  radius?: string[];
+  offset?: number[];
+  radius?: number[];
   color: string;
   opacity: string;
   inset?: string;
 };
 
 export interface CustomFunctions {
-  boxShadow: (offset, radius, color, opacity, inset) => BoxShadow;
+  boxShadow: (
+    offset: number[],
+    radius: number[],
+    color: CustomThemeColors[keyof CustomThemeColors],
+    opacity: string | number,
+    inset: string
+  ) => string;
   hexToRgb: (color: string) => string;
   linearGradient: (color1: string, color2: string) => string;
   pxToRem: (size: number) => string;
@@ -195,10 +202,8 @@ export interface CustomGlobals {
 }
 
 declare module '@mui/material/styles' {
-  interface Theme {
-    palette: {
-      customColors: CustomThemeColors;
-    };
+  export interface Theme {
+    palette: CustomThemeColors;
     boxShadows: CustomBoxShadows;
     borders: CustomBorders;
     functions: CustomFunctions;
@@ -277,7 +282,12 @@ interface OwnerState {
 export type Sizes = 'small' | 'medium' | 'large';
 
 export interface MDBoxProps extends BoxProps {
+  component?: React.ElementType;
   variant?: 'contained' | 'gradient';
+  src?: string;
+  alt?: string;
+  width?: string | number;
+  height?: string | number;
   bgColor?: string;
   color?: string;
   opacity?: number;

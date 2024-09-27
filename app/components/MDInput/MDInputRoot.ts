@@ -16,14 +16,12 @@ export default styled(TextField)<{ ownerState: OwnerStateProps }>(
     };
     const { error, success, disabled } = ownerState;
 
-    const { customColors } = palette;
-
     const {
       grey,
       transparent,
       error: colorError,
       success: colorSuccess
-    } = customColors;
+    } = palette;
     const { pxToRem } = functions;
 
     const errorStyles = () => ({

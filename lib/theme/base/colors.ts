@@ -2,14 +2,15 @@ import { CustomThemeColors } from '../../../app/types/MDTypes';
 
 const colors: CustomThemeColors = {
   background: {
-    default: '#f0f2f5'
+    default: '#f0f2f5',
+    sidenav: '#f0f2f5'
   },
 
   text: {
     main: '#7b809a',
     focus: '#7b809a',
-    primary: '#7b809a', // Changed from main to primary
-    secondary: '#6c757d', // Optional additional color
+    primary: '#7b809a',
+    secondary: '#6c757d',
     disabled: 'rgba(0, 0, 0, 0.38)'
   },
 

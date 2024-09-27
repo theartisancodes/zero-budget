@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import Fade from '@mui/material/Fade';
 
 import MDBox from '../MDBox';

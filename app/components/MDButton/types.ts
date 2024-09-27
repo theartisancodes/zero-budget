@@ -1,12 +1,13 @@
 import { COLORS, Sizes } from '../../types/MDTypes';
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 
 export interface MDButtonProps {
-  color: COLORS;
+  component?: ElementType;
+  color: COLORS | string;
   variant: 'text' | 'contained' | 'outlined' | 'gradient';
   circular: boolean;
   iconOnly: boolean;
   children?: ReactNode;
-  size: Sizes;
+  size?: Sizes;
   darkMode?: boolean;
 }

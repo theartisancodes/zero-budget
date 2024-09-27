@@ -1,9 +1,19 @@
 import { styled, Theme } from '@mui/material/styles';
+import {
+  CustomFunctions,
+  CustomThemeColors,
+  ExtendedTypographyOptions
+} from '../../types/MDTypes';
 
-export default styled('span')(({ theme }) => {
-  const { palette, typography, functions } = theme as Theme;
+export default styled('span')(({ theme }: { theme: Theme }) => {
+  const extendedTheme = theme as Theme & {
+    palette: CustomThemeColors;
+    typography: ExtendedTypographyOptions;
+    functions: CustomFunctions;
+  };
 
-  const { white } = palette.customColors;
+  const { palette, typography, functions } = extendedTheme;
+  const { white } = palette;
   const { size, fontWeightMedium } = typography;
   const { pxToRem } = functions;
 

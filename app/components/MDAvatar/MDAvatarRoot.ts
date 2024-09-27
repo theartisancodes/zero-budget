@@ -15,24 +15,24 @@ interface OwnerState {
 export default styled(Avatar)<{ ownerState: OwnerState }>(
   ({ theme, ownerState }) => {
     const { palette, functions, typography, boxShadows } = theme as Theme & {
-      palette: { customColors: CustomThemeColors };
+      palette: CustomThemeColors;
       functions: CustomFunctions;
       boxShadows: CustomBoxShadows;
     };
     const { shadow, bgColor, size } = ownerState;
 
-    const { gradients, transparent, white } = palette.customColors;
+    const { gradients, transparent, white } = palette;
     const { pxToRem, linearGradient } = functions;
     const { size: fontSize, fontWeightRegular } = typography;
-
-    // backgroundImage value
     const backgroundValue =
       bgColor === 'transparent'
         ? transparent.main
         : linearGradient(gradients[bgColor].main, gradients[bgColor].state);
-
-    // size value
-    let sizeValue;
+    let sizeValue: {
+      width: string;
+      height: string;
+      fontSize: string;
+    };
 
     switch (size) {
       case 'xs':
