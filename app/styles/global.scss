@@ -1,5 +1,6 @@
 @import './colors';
 @import './typography';
+@import './fonts';
 
 * {
   margin: 0;
@@ -110,6 +111,7 @@ input[type='number']::-webkit-outer-spin-button {
 .ps .ps__rail-y.ps--clicking {
   background-color: transparent;
 }
+
 .no-scrolling {
   overflow: hidden;
 }
@@ -212,6 +214,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 .markdown {
   white-space: break-spaces;
+
   ol,
   ul {
     line-height: 10px;
@@ -225,6 +228,7 @@ input[type='number']::-webkit-outer-spin-button {
       white-space: normal;
     }
   }
+
   p {
     white-space: normal;
     overflow-wrap: break-word;

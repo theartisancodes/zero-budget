@@ -1,20 +1,18 @@
 {
-    "*.tsx": [
-      "eslint --fix",
-      "prettier --write",
-      "jest --bail --findRelatedTests --passWithNoTests"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "jest --bail --findRelatedTests --passWithNoTests"
-    ],
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write",
-      "jest --bail --findRelatedTests --passWithNoTests"
-    ],
-    "*.scss": [
-      "prettier --write"
-    ]
-  }
+  "*.tsx": [
+    "eslint --fix",
+    "prettier --write",
+    "jest --bail --findRelatedTests --passWithNoTests"
+  ],
+  "*.js": [
+    "eslint --fix",
+    "prettier --write",
+    "jest --bail --findRelatedTests --passWithNoTests"
+  ],
+  "*.ts": [
+    "eslint --fix",
+    "prettier --write",
+    "jest --bail --findRelatedTests --passWithNoTests"
+  ],
+  "*.scss": ["prettier --write"]
+}

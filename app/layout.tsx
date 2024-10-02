@@ -1,44 +1,15 @@
-'use client';
-
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme from '../lib/theme/theme';
+import React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { useEffect } from 'react';
-import { useServerInsertedHTML } from 'next/navigation';
-import { ServerStyleSheets } from '@mui/styles';
-import { MaterialUIControllerProvider } from './context';
 
-export default function RootLayout({ children }) {
-  useServerInsertedHTML(() => {
-    const sheets = new ServerStyleSheets();
-    sheets.collect(children);
-    return (
-      <style
-        id="jss-server-side"
-        dangerouslySetInnerHTML={{ __html: sheets.toString() }}
-      />
-    );
-  });
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
 
-  useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider>
-          <MaterialUIControllerProvider>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              {children}
-            </ThemeProvider>
-          </MaterialUIControllerProvider>
-        </AppRouterCacheProvider>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
     </html>
   );

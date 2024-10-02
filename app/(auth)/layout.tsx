@@ -1,5 +1,11 @@
 import * as React from 'react';
 
-export default function RootLayout(props: { children: React.ReactNode }) {
-  return <main>{props.children}</main>;
+interface AuthLayoutProps {
+  children: React.ReactNode;
 }
+
+const AuthLayout = ({ children }: AuthLayoutProps) => {
+  return <main>{children}</main>;
+};
+
+export default AuthLayout;

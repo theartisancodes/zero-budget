@@ -17,7 +17,6 @@
       "jest",
       "@testing-library/jest-dom"
     ],
-    "baseUrl": "src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -33,15 +32,22 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "target": "es2021",
+    "baseUrl": ".",
     "paths": {
-      "*": [
-        "*"
+      "@assets/*": [
+        "app/assets/*"
       ],
+      "@styles/*": [
+        "app/styles/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@types/*": [
+        "app/types/*"
+      ]
     },
     "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      },
       {
         "name": "next"
       }
@@ -56,9 +62,20 @@
     "libs"
   ],
   "include": [
-    "typings.d.ts",
-    "src",
     "next-env.d.ts",
+    //    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.scss",
     ".next/types/**/*.ts"
+  ],
+  "plugins": [
+    {
+      "name": "typescript-plugin-css-modules"
+    },
+    {
+      "name": "next"
+    }
   ]
 }
