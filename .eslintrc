@@ -122,7 +122,7 @@
         "block-spacing": "error",
         "brace-style": "error",
         "comma-spacing": "error",
-        "jsx-quotes": ["warn", "prefer-single"],
+        "jsx-quotes": ["off", "prefer-single"],
         "max-len": [
           "error",
           {

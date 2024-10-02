@@ -1,20 +1,57 @@
+
 @font-face {
-  font-family: 'Inria Serif';
-  src: url('../assets/fonts/InriaSerif-Regular.ttf') format('truetype');
+  font-family: 'Graphik';
+  src: url('../../public/assets/fonts/Graphik-Regular-Trial.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/Inter-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/Inter-Bold.ttf') format('truetype');
+  font-family: 'Graphik';
+  src: url('../../public/assets/fonts/Graphik-Bold-Trial.otf') format('opentype');
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../../public/assets/fonts/Graphik-Light-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../../public/assets/fonts/Graphik-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Pangram Font */
+@font-face {
+  font-family: 'Pangram';
+  src: url('../../public/assets/fonts/Pangram-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pangram';
+  src: url('../../public/assets/fonts/Pangram-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pangram';
+  src: url('../../public/assets/fonts/Pangram-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pangram';
+  src: url('../../public/assets/fonts/Pangram-Medium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
 }
