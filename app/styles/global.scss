@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Import custom fonts */
 @font-face {
   font-family: 'Graphik';
   src: url('../../public/assets/fonts/Graphik-Regular-Trial.otf') format('opentype');
@@ -61,62 +61,89 @@
   font-style: normal;
 }
 
+/* Global resets */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles */
 html {
-  font-size: 62.5%; // Equivalent to 10px for easier rem calculations
+  font-size: 62.5%;
 }
 
 body {
-  @apply bg-neutral-light text-neutral-dark antialiased max-h-screen overflow-hidden;
+  @apply bg-neutral-white text-neutral-dark antialiased max-h-screen overflow-hidden;
+  font-family: 'Graphik', sans-serif;
 }
 
-body, input, textarea, button {
-  font-family: 'Lato', sans-serif; // Use Tailwind utility classes if needed
-}
-
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+  font-family: 'Graphik', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 3.2rem;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h5 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
-p, span, a {
+p {
+  font-family: 'Pangram', sans-serif;
+  font-weight: 400;
   font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+span, a {
+  font-family: 'Pangram', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 a {
   @apply text-success-dark no-underline cursor-pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #009688;
+  }
 }
 
+/* Buttons */
 button {
+  font-family: 'Graphik', sans-serif;
+  font-weight: 500;
   cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &:disabled {
     opacity: 0.6;
@@ -128,20 +155,11 @@ button {
   }
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.no-scrolling {
-  overflow: hidden;
-}
-
-
-.ReactQueryDevtools, .ReactQueryDevtoolsPanel, .ReactQueryDevtools button {
-  position: fixed;
-  right: 0 !important;
-  bottom: 5rem !important;
-  left: unset !important;
+/* Forms */
+input, textarea {
+  font-family: 'Pangram', sans-serif;
+  font-weight: 400;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
