@@ -12,7 +12,7 @@ const url =
 const UserItems = [
   {
     label: 'Logout',
-    href: 'logout'
+    href: 'signup'
   }
 ];
 
