@@ -3,7 +3,7 @@ import '@styles/global.scss';
 
 export const metadata = {
   title: 'Zero Budget',
-  description: 'A simple budgeting app'
+  description: 'Streamlined Financial Management for Smarter Spending'
 };
 
 interface RootLayoutProps {
@@ -13,7 +13,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href="/budget.ico" title="budget icons" />
+      </head>
+      <body>
+        <div id="portal-root"></div>
+        {children}
+      </body>
     </html>
   );
 }

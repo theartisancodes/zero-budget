@@ -1,11 +1,47 @@
+'use client';
 import { RootLayoutProps } from 'app/types/types';
 import Sidebar from '@components/Sidebar';
+import Header from '@components/Header';
+import Section from 'app/components/Section';
+import { Avatar } from '@components/Avatar';
+import { useState } from 'react';
+import Menu from '@components/Menu';
+const url =
+  'https://gravatar.com/avatar/27205e5c51cb03f862138b22bcb5dc20f94a342e744ff6df1b8dc8af3c865109';
+
+const UserItems = [
+  {
+    label: 'Logout',
+    href: 'logout'
+  }
+];
 
 const RootLayout = ({ children }: RootLayoutProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <main className="flex h-screen">
       <Sidebar />
-      <section className="flex-grow p-8">{children}</section>
+      <Section>
+        <Header>
+          <Avatar
+            imgUrl={url}
+            altText="User Avatar"
+            height={40}
+            width={40}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
+          {isMenuOpen && (
+            <Menu
+              items={UserItems}
+              top="[5%]"
+              right="[5%]"
+              onClose={() => setIsMenuOpen(false)}
+              isOpen={isMenuOpen}
+            />
+          )}
+        </Header>
+        {children}
+      </Section>
     </main>
   );
 };

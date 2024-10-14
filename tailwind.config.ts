@@ -7,46 +7,44 @@ module.exports = {
     './layouts/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    // Extending the default theme
     extend: {
-      // Custom Color Palette
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25))',
+        'primary-gradient': 'linear-gradient(to right, #1051B2FF, #1e88e5)'
+      },
       colors: {
-        // Primary color for main interface elements
         primary: {
-          light: '#64b5f6', // Light shade for hover or lighter areas
-          DEFAULT: '#1e88e5', // Main color
-          dark: '#1565c0' // Dark shade for contrast or active states
+          light: '#64b5f6',
+          DEFAULT: '#1e88e5',
+          dark: '#1565c0',
+          darker: '#x1051B2FF'
         },
 
-        // Secondary color for less prominent elements
         secondary: {
           light: '#ffb74d',
           DEFAULT: '#ff9800',
           dark: '#f57c00'
         },
 
-        // Error color for alerts, validations, etc.
         error: {
           light: '#ef5350',
           DEFAULT: '#d32f2f',
           dark: '#c62828'
         },
 
-        // Warning color for alerts or warnings
         warning: {
           light: '#ffb74d',
           DEFAULT: '#ffa726',
           dark: '#f57c00'
         },
 
-        // Info color for informational elements
         info: {
           light: '#4fc3f7',
           DEFAULT: '#29b6f6',
           dark: '#0288d1'
         },
 
-        // Success color for successful actions
         success: {
           light: '#81c784',
           DEFAULT: '#66bb6a',
@@ -54,18 +52,25 @@ module.exports = {
         },
 
         neutral: {
+          white: '#ffffff',
+          lighter: '#a1a6a9',
           light: '#f5f5f5',
           DEFAULT: '#9e9e9e',
-          dark: '#616161'
+          dark: '#132128'
+        },
+
+        base: {
+          dark: '#344767',
+          DEFAULT: '#f9fafb'
         }
       },
 
       fontFamily: {
-        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Graphik', 'Inter', 'Helvetica', 'Arial', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
-        mono: ['Fira Code', 'monospace']
+        mono: ['Fira Code', 'monospace'],
+        pangram: ['Pangram', 'sans-serif']
       },
-
       spacing: {
         18: '4.5rem',
         22: '5.5rem',

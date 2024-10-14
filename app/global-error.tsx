@@ -5,22 +5,26 @@ import * as Sentry from '@sentry/nextjs';
 import Error from 'next/error';
 
 interface GlobalErrorProps {
-  error: Error;
+  errorMessage: string;
   statusCode?: number;
 }
 
 export default function GlobalError({
-  error,
+  errorMessage,
   statusCode = 500
 }: GlobalErrorProps) {
   useEffect(() => {
-    Sentry.captureException(error);
-  }, [error]);
+    if (statusCode !== 404) {
+      Sentry.captureException(new TypeError(errorMessage));
+    }
+  }, [errorMessage, statusCode]);
 
   return (
     <html>
       <body>
-        <Error statusCode={statusCode} />
+        <div className="flex flex-col items-center justify-center h-screen">
+          <Error statusCode={statusCode} />
+        </div>
       </body>
     </html>
   );
