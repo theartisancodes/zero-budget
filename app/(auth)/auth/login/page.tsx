@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import clsx from 'clsx';
 
 const Login: React.FC = () => {
@@ -94,6 +95,12 @@ const Login: React.FC = () => {
           className="w-full p-3 text-white bg-blue-500 rounded-md hover:bg-blue-600"
         >
           Log In
+        </button>
+        <button
+          onClick={() => signIn('google')}
+          className="p-3 text-white bg-blue-500 rounded-md hover:bg-blue-600"
+        >
+          Sign in with Google
         </button>
       </form>
     </div>

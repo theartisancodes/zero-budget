@@ -1,8 +1,7 @@
-import React, { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
+import { signOut } from 'next-auth/react';
 import clsx from 'clsx';
 import Card from 'app/components/Card';
-import Button from 'app/components/Button'; // Import clsx
 
 interface MenuProps {
   items: Array<{ label: string; href: string }>;
@@ -23,11 +22,6 @@ const Menu = ({
   onClose,
   isOpen
 }: MenuProps) => {
-  const route = useRouter();
-
-  const onClickMenu = (href: string) => {
-    route.push(href);
-  };
   if (!isOpen) return null;
   return (
     <div
@@ -57,6 +51,7 @@ const Menu = ({
               'hover:text-neutral-white'
             )}
             href={item.href}
+            onClick={() => signOut()}
           >
             {item.label}
           </a>
