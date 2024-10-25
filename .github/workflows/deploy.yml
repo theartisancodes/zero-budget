@@ -64,7 +64,7 @@ jobs:
 
       - name: Deploy 
         run: |
-          aws amplify start-deployment \
+          npx amplify publish \
             --app-id ${{ secrets.AMPLIFY_APP_ID }} \
             --branch-name ${GITHUB_REF_NAME} \
             --job-id "${{ github.run_id }}"
