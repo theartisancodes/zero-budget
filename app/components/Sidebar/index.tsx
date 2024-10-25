@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation';
 import { ROUTES } from 'app/lib/routes';
 import Button from 'app/components/Button';
 import Image from 'next/image';
-import logo from '/assets/images/logo.png';
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -18,7 +17,7 @@ const Sidebar = () => {
   return (
     <aside className="flex flex-col justify-between rounded-3xl m-8 w-96 h-[95%] bg-custom-gradient p-8">
       <div className="flex flex-col mb-10">
-        <Image src={logo} alt="Zero Budget Logo" />
+        <Image src="/assets/images/logo.png" alt="Zero Budget Logo" />
       </div>
       <nav className="space-y-2">
         {topRoutes.map((key) => {

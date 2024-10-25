@@ -1,13 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import NotFoundImg from '/assets/images/not-found.svg';
 
 export default function NotFound() {
   return (
     <div className="flex items-center justify-center h-screen gap-8">
       <Image
-        src={NotFoundImg}
+        src="/assets/images/not-found.svg"
         alt="Not Found"
         width={800}
         height={800}
