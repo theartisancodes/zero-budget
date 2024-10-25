@@ -64,7 +64,13 @@ jobs:
 
       - name: Deploy 
         run: |
-          npx amplify publish \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-            --branch-name ${GITHUB_REF_NAME} \
-            --job-id "${{ github.run_id }}"
+            aws amplify start-deployment \
+             --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+             --branch-name "${{ github.ref_name }}" \
+             --job-id "${{ github.run_id }}"
+        env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS__REGION: us-east-1
+            AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+        
