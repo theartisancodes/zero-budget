@@ -73,4 +73,5 @@ jobs:
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS__REGION: us-east-1
             AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+            ACTIONS_RUNNER_DEBUG: "true"
         
