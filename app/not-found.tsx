@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import NotFoundImg from '../public/assets/images/not-found.svg';
+import NotFoundImg from '/assets/images/not-found.svg';
 
 export default function NotFound() {
   return (

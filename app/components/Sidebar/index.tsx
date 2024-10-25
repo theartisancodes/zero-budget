@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { ROUTES } from 'app/lib/routes';
 import Button from 'app/components/Button';
 import Image from 'next/image';
-import logo from 'public/assets/images/logo.png';
+import logo from '/assets/images/logo.png';
 
 const Sidebar = () => {
   const pathname = usePathname();
