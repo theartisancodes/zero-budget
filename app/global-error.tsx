@@ -1,7 +1,4 @@
 'use client';
-
-import { useEffect } from 'react';
-import * as Sentry from '@sentry/nextjs';
 import Error from 'next/error';
 
 interface GlobalErrorProps {
@@ -9,16 +6,7 @@ interface GlobalErrorProps {
   statusCode?: number;
 }
 
-export default function GlobalError({
-  errorMessage,
-  statusCode = 500
-}: GlobalErrorProps) {
-  useEffect(() => {
-    if (statusCode !== 404) {
-      Sentry.captureException(new TypeError(errorMessage));
-    }
-  }, [errorMessage, statusCode]);
-
+export default function GlobalError({ statusCode = 500 }: GlobalErrorProps) {
   return (
     <html>
       <body>
