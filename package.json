@@ -11,6 +11,7 @@
     "test": "jest --config jest.config.ts"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.24",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.2",
@@ -20,6 +21,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
+    "aws-amplify": "^6.6.7",
     "eslint-plugin-storybook": "^0.8.0",
     "next": "14.2.13",
     "next-auth": "^4.24.8",
