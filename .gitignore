@@ -43,7 +43,6 @@ next-env.d.ts
 /node_modules
 /public
 /coverage
-/.github/workflows
 
 .vscode
 
@@ -51,3 +50,5 @@ next-env.d.ts
 .env.sentry-build-plugin
 
 .idea
+
+.env.local
