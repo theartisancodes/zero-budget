@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build-prod": "NODE_ENV=production next build",
-    "build-dev": "next build",
-    "start": "next dev",
+    "build-dev": "NODE_ENV=development next build",
+    "start": "next start",
     "lint": "next lint",
     "test": "jest --config jest.config.ts"
   },
