@@ -1,4 +1,4 @@
-name: Deploy to Amplify
+name: Zero Budget
 
 on:
   push:
