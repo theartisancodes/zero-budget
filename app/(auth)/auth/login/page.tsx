@@ -34,7 +34,6 @@ const Login: React.FC = () => {
 
     if (!validationErrors.email && !validationErrors.password) {
       // Form is valid - handle form submission here (e.g., API call)
-      console.log('Form Data:', formData);
     }
   };
 

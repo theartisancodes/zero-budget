@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build-prod": "NODE_ENV=production next build",
-    "build-dev": "NODE_ENV=development next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --config jest.config.ts"

@@ -45,7 +45,6 @@ const Signup = () => {
       !validationErrors.password
     ) {
       // Form is valid - handle form submission here (e.g., API call)
-      console.log('Form Data:', formData);
     }
   };
 

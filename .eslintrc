@@ -50,6 +50,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/no-unescaped-entities": "off",
+    "@next/next/no-document-import-in-page": "off",
     "semi": ["error", "always"]
   },
   "overrides": [
