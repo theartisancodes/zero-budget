@@ -13,7 +13,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
       </div>
       <div className="hidden md:flex flex-1 relative h-full">
         <Image
-          src="assets/images/login-image.png"
+          src="/assets/images/login-image.png"
           alt="budgetImg"
           className="object-cover flex-shrink-0"
           fill
