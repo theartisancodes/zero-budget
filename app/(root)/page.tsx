@@ -4,10 +4,12 @@ import { redirect } from 'next/navigation';
 export default async function Dashboard() {
   const { user } = await getSession();
   const { accessToken } = await getAccessToken();
+
   if (!accessToken) {
-    return redirect('/auth/login');
+    redirect('/auth/login');
   }
-  console.log(accessToken, '__access');
+  localStorage.setItem('accessToken', JSON.stringify(accessToken));
+  localStorage.setItem('user', JSON.stringify(user));
   return (
     <div>
       <h1>Welcome to the Dashboard, {user?.name}!</h1>

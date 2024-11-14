@@ -4,6 +4,7 @@ import Sidebar from '@components/Sidebar';
 import Header from '@components/Header';
 import Section from 'app/components/Section';
 import { Avatar } from '@components/Avatar';
+import { useRouter } from 'next/navigation';
 
 import Menu from '@components/Menu';
 import { RootLayoutProps } from 'app/types/types';
@@ -19,6 +20,14 @@ const UserItems = [
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    setIsMenuOpen(false);
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+    router.push('/api/auth/logout');
+  };
   return (
     <main className="flex h-screen">
       <Sidebar />
@@ -34,10 +43,8 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           {isMenuOpen && (
             <Menu
               items={UserItems}
-              top="[9rem]"
-              right="[5%]"
-              onClose={() => setIsMenuOpen(false)}
               isOpen={isMenuOpen}
+              onClose={handleLogout}
             />
           )}
         </Header>
