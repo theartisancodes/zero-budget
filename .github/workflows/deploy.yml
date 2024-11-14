@@ -3,7 +3,7 @@ name: Zero Budget
 on:
   push:
     branches:
-      - main  # Only deploy on pushes to main
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20  # Use the appropriate version
+          node-version: 20
 
       - name: Install Dependencies
         run: yarn
@@ -24,13 +24,12 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Install Amplify CLI
-        run: npm install -g @aws-amplify/cli
-
-      - name: Deploy to Amplify
+      - name: Deploy to Vercel
+        uses: vercel/vercel-action@v2
+        with:
+          token: ${{ secrets.VERCEL_TOKEN }}
+          project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          org-id: ${{ secrets.VERCEL_ORG_ID }}
+          working-directory: .
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'us-east-1'
-          AmplifyAppId: ${{ secrets.AmplifyAppId }}
-        run: amplify publish --yes
+          VERCEL_ENV: production
