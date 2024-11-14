@@ -1,4 +1,4 @@
-name: Preview Deployment
+name: Vercel Develop Deployment
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -6,11 +6,11 @@ env:
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - develop  # Only deploy on pushes to the develop branch
 
 jobs:
-  Deploy-Preview:
+  Deploy-Develop:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
