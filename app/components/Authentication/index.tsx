@@ -16,6 +16,7 @@ const AuthenticationForm = ({ authenticationType }: AuthFormProps) => {
       <SingleSignOn
         headerText={headerText}
         subText="Enter your credentials to access your account"
+        authenticationType={authenticationType}
       />
 
       <div className="flex items-center my-4">

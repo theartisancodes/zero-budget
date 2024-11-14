@@ -1,21 +1,35 @@
+'use client';
 import { Google, X } from '@mui/icons-material';
+import { useRouter } from 'next/navigation';
 import Button from '@components/Button';
-import { useAuth0 } from '@auth0/auth0-react';
 
 interface SingleSignOnProps {
   headerText: string;
   subText?: string;
+  authenticationType?: 'login' | 'signup';
 }
 
-const SingleSignOn = ({ headerText, subText }: SingleSignOnProps) => {
-  const { loginWithRedirect } = useAuth0();
+const SingleSignOn = ({
+  headerText,
+  subText,
+  authenticationType
+}: SingleSignOnProps) => {
+  const router = useRouter();
 
-  const handleLogin = async (connection: string) => {
-    await loginWithRedirect({
-      authorizationParams: {
-        login_hint: connection
-      }
-    });
+  const handleLogin = (connection: string) => {
+    router.push(`/api/auth/login?login_hint=${connection}`);
+  };
+
+  const handleSignup = (connection: string) => {
+    router.push(`/api/auth/login?login_hint=${connection}&screen_hint=signup`);
+  };
+
+  const onClickSSO = (connection: string) => {
+    if (authenticationType === 'login') {
+      handleLogin(connection);
+    } else if (authenticationType === 'signup') {
+      handleSignup(connection);
+    }
   };
   return (
     <div className="flex flex-col items-start">
@@ -28,9 +42,13 @@ const SingleSignOn = ({ headerText, subText }: SingleSignOnProps) => {
           textClassName="text-lg"
           icon={Google}
           iconSize="medium"
-          onClick={() => handleLogin('google-oauth2')}
+          onClick={() =>
+            onClickSSO(process.env.NEXT_PUBLIC_AUTH0_LOGIN_HINT_GOOGLE)
+          }
         >
-          Sign in with Google
+          {authenticationType === 'login'
+            ? 'Sign in with Google'
+            : 'Sign up with Google'}
         </Button>
         <Button
           state="outline"
@@ -38,9 +56,9 @@ const SingleSignOn = ({ headerText, subText }: SingleSignOnProps) => {
           textClassName="text-lg"
           icon={X}
           iconSize="medium"
-          onClick={() => handleLogin('auth0')}
+          onClick={() => onClickSSO(process.env.NEXT_PUBLIC_AUTH0_LOGIN_HINT_X)}
         >
-          Sign in with X
+          {authenticationType === 'login' ? 'Sign in with X' : 'Sign up with X'}
         </Button>
       </div>
     </div>

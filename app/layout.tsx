@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import AuthProviderWrapper from './AuthProviderWrapper';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import '@styles/global.scss';
 
 export const metadata = {
@@ -21,12 +21,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="description" content={metadata.description} />
         <link rel="icon" href="/budget.ico" title="budget icons" />
       </head>
-      <body>
-        <AuthProviderWrapper>
+      <UserProvider>
+        <body>
           <div id="portal-root"></div>
           {children}
-        </AuthProviderWrapper>
-      </body>
+        </body>
+      </UserProvider>
     </html>
   );
 }
