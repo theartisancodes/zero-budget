@@ -41,7 +41,6 @@ next-env.d.ts
 /coverage
 /kubernetes
 /node_modules
-/public
 /coverage
 
 .vscode
