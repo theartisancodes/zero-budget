@@ -54,9 +54,8 @@ my-project/
 2. **Install dependencies**:
 
    ```bash
-  yarn
+   yarn
    ```
-
 3. **Set up environment variables**:
 
    Create a `.env.local` file and add the necessary environment variables for Auth0, NextAuth, and other services.
