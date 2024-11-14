@@ -13,7 +13,7 @@ const url =
 const UserItems = [
   {
     label: 'Logout',
-    href: 'signup'
+    href: '/api/auth/logout'
   }
 ];
 
@@ -34,7 +34,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           {isMenuOpen && (
             <Menu
               items={UserItems}
-              top="[5%]"
+              top="[9rem]"
               right="[5%]"
               onClose={() => setIsMenuOpen(false)}
               isOpen={isMenuOpen}

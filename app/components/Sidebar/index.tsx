@@ -54,7 +54,7 @@ const Sidebar = () => {
             <div key={key} className="flex flex-col gap-10">
               <Link href={route.path} passHref className="flex flex-col gap-10">
                 <Button
-                  state={isActive ? 'primary' : 'outline'}
+                  state={isActive ? 'primary' : 'secondary'}
                   icon={route.icon}
                   width="178"
                 >

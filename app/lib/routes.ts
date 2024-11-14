@@ -17,7 +17,7 @@ export const ROUTES: Routes = {
   DASHBOARD: {
     name: 'Dashboard',
     icon: SpaceDashboardIcon,
-    path: '/dashboard',
+    path: '/',
     location: 'top'
   },
   EXPENSES: {
