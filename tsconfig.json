@@ -45,7 +45,10 @@
       ],
       "@types/*": [
         "app/types/*"
-      ]
+      ],
+      "@hooks/*": [
+        "app/hooks/*"
+      ],
     },
     "plugins": [
       {
@@ -63,7 +66,6 @@
   ],
   "include": [
     "next-env.d.ts",
-    //    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Image from 'next/image';
+import DemoCard from '@components/DemoCard';
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -7,19 +7,16 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   return (
-    <main className="bg-white flex flex-1 fixed w-full h-full">
-      <div className="flex-1 flex items-center justify-center p-8">
-        {children}
-      </div>
-      <div className="hidden md:flex flex-1 relative h-full">
-        <Image
-          src="/assets/images/login-image.png"
-          alt="budgetImg"
-          className="object-cover flex-shrink-0"
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          priority
-        />
+    <main className="bg-white flex flex-1 w-full h-full items-center justify-center fixed">
+      <div className="bg-white flex flex-1 max-w-screen-xl h-[90%] mx-auto p-8">
+        <div className="flex-1 flex items-center justify-center p-8">
+          {children}
+        </div>
+        <div className="hidden md:flex flex-1 relative p-2">
+          <div className="bg-primary-dark rounded-3xl w-full">
+            <DemoCard />
+          </div>
+        </div>
       </div>
     </main>
   );

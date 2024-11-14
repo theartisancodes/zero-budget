@@ -6,9 +6,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   state?: 'primary' | 'secondary' | 'tertiary' | 'outline';
   icon?: React.ElementType;
+  iconSize?: 'small' | 'medium' | 'large';
   as?: 'button' | 'link';
   width?: string | number;
   className?: string;
+  textClassName?: string;
 }
 
 const Button = ({
@@ -16,8 +18,11 @@ const Button = ({
   state = 'primary',
   children,
   icon,
+  iconSize = 'large',
   width,
-  className
+  className,
+  textClassName,
+  ...props
 }: ButtonProps) => {
   const baseClasses = clsx(
     'flex gap-4 p-4 font-normal rounded-xl',
@@ -33,25 +38,29 @@ const Button = ({
       : 'w-full';
 
   const stateClasses = {
-    primary: 'bg-primary-gradient text-white hover:bg-primary-dark',
+    primary: 'bg-primary text-white hover:bg-primary-dark font-semibold',
     secondary: 'bg-secondary text-white hover:bg-secondary-dark',
     tertiary: 'bg-gray-200 text-gray-700 hover:bg-gray-300',
-    outline: 'bg-transparent hover:bg-gray-500 hover:text-white text-white'
+    outline:
+      'bg-transparent border border-gray-500 text-gray-500 hover:border-primary'
   };
 
   const classes = `${baseClasses} ${widthClasses} ${stateClasses[state]} ${className}`;
+  const spanClasses = clsx('font-pangram', `${textClassName}`);
 
   return (
-    <button onClick={onClick} className={classes}>
-      {icon && (
-        <Icon
-          icon={icon}
-          muiProps={{
-            fontSize: 'large'
-          }}
-        />
-      )}
-      <span className="font-pangram text-2xl">{children}</span>
+    <button onClick={onClick} className={classes} {...props}>
+      <div className="flex px-2 py-4 gap-4 items-center">
+        {icon && (
+          <Icon
+            icon={icon}
+            muiProps={{
+              fontSize: iconSize
+            }}
+          />
+        )}
+        <span className={spanClasses}>{children}</span>
+      </div>
     </button>
   );
 };

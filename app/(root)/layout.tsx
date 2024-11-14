@@ -1,11 +1,12 @@
 'use client';
-import { RootLayoutProps } from 'app/types/types';
+import { useState } from 'react';
 import Sidebar from '@components/Sidebar';
 import Header from '@components/Header';
 import Section from 'app/components/Section';
 import { Avatar } from '@components/Avatar';
-import { useState } from 'react';
+
 import Menu from '@components/Menu';
+import { RootLayoutProps } from 'app/types/types';
 const url =
   'https://gravatar.com/avatar/27205e5c51cb03f862138b22bcb5dc20f94a342e744ff6df1b8dc8af3c865109';
 
