@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to Vercel
         uses: vercel/vercel-action@v2
         with:
-          token: ${{ secrets.VERCEL_TOKEN }}
+          token: ${{ secrets.ZERO_BUDGET_TOKEN}}
           project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           org-id: ${{ secrets.VERCEL_ORG_ID }}
           working-directory: .
