@@ -1,13 +1,12 @@
-import { getSession } from '@auth0/nextjs-auth0';
+import { useUserSession } from '@hooks/queries/useUserSession';
 
-async function Dashboard() {
-  const session = await getSession();
-
+const Dashboard = async () => {
+  const { user } = await useUserSession();
   return (
     <div>
-      <h1>Welcome to the Dashboard, {session.user.name}!</h1>
+      <h1>Welcome to the Dashboard, {user.name}!</h1>
     </div>
   );
-}
+};
 
 export default Dashboard;

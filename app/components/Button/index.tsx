@@ -53,6 +53,7 @@ const Button = ({
       <div className="flex px-2 py-4 gap-4 items-center">
         {icon && (
           <Icon
+            data-testid="muiSvgIcon-root"
             icon={icon}
             muiProps={{
               fontSize: iconSize

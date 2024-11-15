@@ -9,7 +9,16 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 const config: Config = {
   coverageProvider: 'v8',
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    '^@assets/(.*)$': '<rootDir>/app/assets/$1',
+    '^@styles/(.*)$': '<rootDir>/app/styles/$1',
+    '^@components/(.*)$': '<rootDir>/app/components/$1',
+    '^@types/(.*)$': '<rootDir>/app/types/$1',
+    '^@hooks/(.*)$': '<rootDir>/app/hooks/$1',
+    '^@api/(.*)$': '<rootDir>/app/api/$1'
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };

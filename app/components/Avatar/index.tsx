@@ -41,7 +41,7 @@ export const Avatar: FC<AvatarProps> = (props) => {
     />
   ) : (
     <div
-      className={`flex items-center justify-center bg-[#205257] text-white rounded-full ${className}`}
+      className={`flex items-center justify-center bg-primary-darker text-white rounded-full ${className}`}
       onClick={onClick}
       style={{ width, height, minWidth: width, minHeight: height }}
     >

@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -26,7 +27,6 @@
       "es2021",
       "dom"
     ],
-    "moduleResolution": "node",
     "rootDir": ".",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
@@ -82,5 +82,5 @@
     {
       "name": "next"
     }
-  ]
+  ],
 }

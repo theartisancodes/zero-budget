@@ -8,8 +8,7 @@ import { useRouter } from 'next/navigation';
 
 import Menu from '@components/Menu';
 import { RootLayoutProps } from 'app/types/types';
-const url =
-  'https://gravatar.com/avatar/27205e5c51cb03f862138b22bcb5dc20f94a342e744ff6df1b8dc8af3c865109';
+import { useUserSession } from '@hooks/queries/useUserSession';
 
 const UserItems = [
   {
@@ -18,9 +17,10 @@ const UserItems = [
   }
 ];
 
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = async ({ children }: RootLayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const { user } = await useUserSession();
 
   const handleLogout = () => {
     setIsMenuOpen(false);
@@ -34,11 +34,12 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       <Section>
         <Header>
           <Avatar
-            imgUrl={url}
+            imgUrl={user?.picture}
             altText="User Avatar"
+            defaultText={user?.name}
             height={40}
             width={40}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(true)}
           />
           {isMenuOpen && (
             <Menu
