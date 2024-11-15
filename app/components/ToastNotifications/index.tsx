@@ -1,3 +1,4 @@
+'use client';
 import { toast, ToastContainer, ToastOptions } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,7 +28,7 @@ export const showWarning = (message: string): void => {
   toast.warn(message, defaultOptions);
 };
 
-const ToastNotification: React.FC = () => {
+const ToastNotification = () => {
   return <ToastContainer />;
 };
 
